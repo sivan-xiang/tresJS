@@ -484,19 +484,11 @@ onMounted(rebuild)
       >
         <TresBoxGeometry :args="[c.l, c.h, c.w]" />
         <TresMeshStandardMaterial :color="c.color" :roughness="0.65" :metalness="0.1" />
-        <!-- 长侧面型号（白字） -->
-        <TresMesh :position="[0, 0, c.w / 2 + 0.02]">
-          <TresPlaneGeometry :args="[c.l * 0.92, c.h * 0.92]" />
+        <!-- 顶部型号（白字） -->
+        <TresMesh :rotation="[-Math.PI / 2, 0, 0]" :position="[0, c.h / 2 + 0.02, 0]">
+          <TresPlaneGeometry :args="[c.l * 0.92, c.w * 0.92]" />
           <TresMeshBasicMaterial
-            :map="labelTex(c.name, c.l, c.h)"
-            :transparent="true"
-            :depth-write="false"
-          />
-        </TresMesh>
-        <TresMesh :rotation="[0, Math.PI, 0]" :position="[0, 0, -(c.w / 2 + 0.02)]">
-          <TresPlaneGeometry :args="[c.l * 0.92, c.h * 0.92]" />
-          <TresMeshBasicMaterial
-            :map="labelTex(c.name, c.l, c.h)"
+            :map="labelTex(c.name, c.l, c.w)"
             :transparent="true"
             :depth-write="false"
           />
