@@ -1,0 +1,22 @@
+# 依赖与构建产物
+node_modules
+dist
+dist-ssr
+*.local
+
+# 日志 / 缓存
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vite
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
